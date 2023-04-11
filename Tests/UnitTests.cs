@@ -30,6 +30,100 @@ namespace GithubActionsLab
             Assert.Throws<ArgumentNullException>(() => Program.Add(null, null));
         }
 
-        // Implement 3 tests per operation, following a similar pattern as above
+        [Test]
+        public void Subtract_ValidKamrath()
+        {
+            Assert.AreEqual(3, Program.Subtract("4", "1"));
+            Assert.AreEqual(5, Program.Subtract("7", "2"));
+            Assert.AreEqual(12, Program.Subtract("19", "7"));
+        }
+
+        [Test]
+        public void Subtract_InvalidKamrath()
+        {
+            Assert.Throws<FormatException>(() => Program.Subtract("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Subtract("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Subtract("a", "a"));
+        }
+
+        [Test]
+        public void Subtract_NullKamrath()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Subtract("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Subtract(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Subtract(null, null));
+        }
+
+        [Test]
+        public void Multiply_ValidKamrath()
+        {
+            Assert.AreEqual(4, Program.Multiply("4", "1"));
+            Assert.AreEqual(14, Program.Multiply("7", "2"));
+            Assert.AreEqual(21, Program.Multiply("3", "7"));
+        }
+
+        [Test]
+        public void Multiply_InvalidKamrath()
+        {
+            Assert.Throws<FormatException>(() => Program.Multiply("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Multiply("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Multiply("a", "a"));
+        }
+
+        [Test]
+        public void Multiply_NullKamrath()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Multiply("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Multiply(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Multiply(null, null));
+        }
+
+        [Test]
+        public void Divide_ValidKamrath()
+        {
+            Assert.AreEqual(4, Program.Divide("4", "1"));
+            Assert.AreEqual(3.5, Program.Divide("7", "2"));
+            Assert.AreEqual(2, Program.Divide("10", "5"));
+        }
+
+        [Test]
+        public void Divide_InvalidKamrath()
+        {
+            Assert.Throws<FormatException>(() => Program.Divide("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Divide("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Divide("a", "a"));
+        }
+
+        [Test]
+        public void Divide_NullKamrath()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Divide("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Divide(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Divide(null, null));
+        }
+
+        [Test]
+        public void Power_ValidKamrath()
+        {
+            Assert.AreEqual(4, Program.Power("4", "1"));
+            Assert.AreEqual(49, Program.Power("7", "2"));
+            Assert.AreEqual(2, Program.Power("2", "4"));
+        }
+
+        [Test]
+        public void Power_InvalidKamrath()
+        {
+            Assert.Throws<FormatException>(() => Program.Power("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Power("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Power("a", "a"));
+        }
+
+        [Test]
+        public void Power_NullKamrath()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Power("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Power(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Power(null, null));
+        }
     }
 }
